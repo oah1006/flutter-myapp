@@ -34,20 +34,29 @@ class MyBottomNavBar extends StatelessWidget {
           return CupertinoPageScaffold(
             navigationBar: CupertinoNavigationBar(
               // Try removing opacity to observe the lack of a blur effect and of sliding content.
-              leading: Icon(Icons.list),
-              trailing: Icon(Icons.qr_code),
-                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-
-              border: Border(
-                  bottom:BorderSide(
-                      width: 1,
-                      color: CupertinoColors.activeGreen,
-                      style: BorderStyle.solid
+              middle: Text(
+                  "DRIVOR",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.w600,
                   )
               ),
-
+              leading: Icon(
+                  CupertinoIcons.list_bullet,
+                  color: Colors.blue,
+                  size: 36.0,
+              ),
+              trailing: Icon(
+                  CupertinoIcons.bell_fill,
+                  color: Colors.blue,
+                  size: 36.0,
+              ),
             ),
-            child: Container()
+            child: Column(
+              children: <Widget>[
+              ],
+            ),
           );
         }
     );

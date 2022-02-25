@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
@@ -10,18 +11,32 @@ class MyStatefulWidget extends StatefulWidget {
 class MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
+    // return CupertinoPageScaffold(
+    //     navigationBar: CupertinoNavigationBar(
+    //       // Try removing opacity to observe the lack of a blur effect and of sliding content.
+    //       leading: Icon(Icons.list),
+    //       trailing: Icon(Icons.qr_code),
+    //       padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+    //       border: Border(
+    //           bottom:BorderSide(
+    //               width: 1,
+    //               color: CupertinoColors.activeGreen,
+    //               style: BorderStyle.solid
+    //           )
+    //       ),
+    //
+    //     ),
+    //     child: Container()
+    // );
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         // Try removing opacity to observe the lack of a blur effect and of sliding content.
-        backgroundColor: CupertinoColors.systemGrey.withOpacity(0.5),
-        middle: const Text('Sample Code'),
+        middle: Icon(CupertinoIcons.bell_fill),
+        leading: Icon(CupertinoIcons.list_bullet),
+        trailing: Icon(CupertinoIcons.qrcode),
       ),
       child: Column(
         children: <Widget>[
-          Container(height: 50, color: CupertinoColors.systemRed),
-          Container(height: 50, color: CupertinoColors.systemGreen),
-          Container(height: 50, color: CupertinoColors.systemBlue),
-          Container(height: 50, color: CupertinoColors.systemYellow),
         ],
       ),
     );
