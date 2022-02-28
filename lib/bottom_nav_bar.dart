@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:myapp/top_appbar.dart';
 
 class MyBottomNavBar extends StatelessWidget {
   const MyBottomNavBar ({Key? key}) : super(key: key);
@@ -33,7 +32,7 @@ class MyBottomNavBar extends StatelessWidget {
             ),
           ],
         ), tabBuilder: (context, i) {
-          return MyStatefulWidget();
+          return Center();
         }
     );
   }
