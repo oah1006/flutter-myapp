@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             size: 36.0,
           ),
           trailing: Icon(
-            CupertinoIcons.bell_fill,
+            CupertinoIcons.person_fill,
             color: Colors.blue,
             size: 36.0,
           ),
