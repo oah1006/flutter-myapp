@@ -9,17 +9,22 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-          leading: CupertinoNavigationBarBackButton(
-            onPressed: () => Navigator.of(context).pop(),
-          )
-      ),
+      // navigationBar: CupertinoNavigationBar(
+      //     leading: CupertinoNavigationBarBackButton(
+      //       onPressed: () => Navigator.of(context).pop(),
+      //     )
+      // ),
       child: new SingleChildScrollView(
           child: Column(
               children: <Widget>[
-                Container(
-                    padding: EdgeInsets.fromLTRB(0, 100, 0, 20),
-                    child: Text(
+                SizedBox(
+                  height: 80,
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 40, 0, 40),
+                  child: Column(
+                    children: [
+                      Text(
                         "Welcome DRIVOR",
                         style: TextStyle(
                             fontSize: 30,
@@ -27,8 +32,32 @@ class Login extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                             decoration: TextDecoration.none
                         )
-                    ),
+                      ),
+                      Text(
+                        "Login to continue using DRIVOR",
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.lightBlue,
+                            fontWeight: FontWeight.w600,
+                            decoration: TextDecoration.none
+                        )
+                      )
+                    ],
+                  )
                 ),
+
+                // Container(
+                //     padding: EdgeInsets.fromLTRB(0, 100, 0, 20),
+                //     child: Text(
+                //         "Welcome DRIVOR",
+                //         style: TextStyle(
+                //             fontSize: 30,
+                //             color: Colors.lightBlue,
+                //             fontWeight: FontWeight.w600,
+                //             decoration: TextDecoration.none
+                //         )
+                //     ),
+                // ),
                 CupertinoFormSection(
                     children: [
                       CupertinoFormRow(
@@ -50,6 +79,7 @@ class Login extends StatelessWidget {
                             children: [
                               const SizedBox(height: 30),
                               CupertinoButton.filled(
+                                minSize: 22.0,
                                 onPressed: () {},
                                 child: const Text('Sign In'),
                               ),
@@ -59,8 +89,8 @@ class Login extends StatelessWidget {
                                       'Nếu bạn chưa có tài khoản?',
                                       style: TextStyle(
                                           fontSize: 16,
-                                        color: Colors.black,
-                                        decoration: TextDecoration.none
+                                          color: Colors.black,
+                                          decoration: TextDecoration.none
                                       )
                                   )
                               ),
