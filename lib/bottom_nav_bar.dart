@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/map_screen.dart';
 
 
 class MyBottomNavBar extends StatelessWidget {
@@ -31,8 +32,55 @@ class MyBottomNavBar extends StatelessWidget {
               label: 'Ứng tuyển',
             ),
           ],
-        ), tabBuilder: (context, i) {
-          return Center();
+        ), tabBuilder: (BuildContext context, int index) {
+            switch (index) {
+              case 0:
+                return CupertinoTabView(
+                  builder: (BuildContext context) {
+                    return MapSceen();
+                  },
+              );
+              case 1:
+                return CupertinoTabView(
+                  builder: (BuildContext context) {
+                    return Center(
+                      child: Text("Tra cứu")
+                    );
+                  },
+                );
+              case 2:
+                return CupertinoTabView(
+                  builder: (BuildContext context) {
+                    return Center(
+                        child: Text("Tra cứu")
+                    );
+                  },
+                );
+              case 3:
+                return CupertinoTabView(
+                  builder: (BuildContext context) {
+                    return Center(
+                        child: Text("Tra cứu")
+                    );
+                  },
+                );
+              case 4:
+                return CupertinoTabView(
+                  builder: (BuildContext context) {
+                    return Center(
+                        child: Text("Tra cứu")
+                    );
+                  },
+                );
+              default:
+                return CupertinoTabView(
+                  builder: (BuildContext context) {
+                    return Center(
+                        child: Text("Error")
+                    );
+                  },
+                );
+            }
         }
     );
   }
