@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/map_screen.dart';
 
+import 'network_request.dart';
+
 
 class MyBottomNavBar extends StatelessWidget {
   const MyBottomNavBar ({Key? key}) : super(key: key);
@@ -43,9 +45,7 @@ class MyBottomNavBar extends StatelessWidget {
               case 1:
                 return CupertinoTabView(
                   builder: (BuildContext context) {
-                    return Center(
-                      child: Text("Tra cứu")
-                    );
+                    return DataFromAPI();
                   },
                 );
               case 2:

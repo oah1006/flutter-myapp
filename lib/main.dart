@@ -11,6 +11,8 @@ import 'package:myapp/sign_up.dart';
 import 'home_screen.dart';
 import 'package:myapp/login.dart';
 import 'package:myapp/location_service.dart';
+
+import 'network_request.dart';
 void main() {
   runApp(const MyApp());
 }
