@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/map_screen.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'network_request.dart';
 
 
 class MyBottomNavBar extends StatelessWidget {
   const MyBottomNavBar ({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +53,21 @@ class MyBottomNavBar extends StatelessWidget {
               case 2:
                 return CupertinoTabView(
                   builder: (BuildContext context) {
-                    return Center(
-                        child: Text("Tra cứu")
-                    );
+                    final box = GetStorage();
+                    if (box.read('user') != null) {
+                      return Center(
+                        child: Text(
+                          box.read('user')
+                        )
+                      );
+                    } else {
+                      box.write('user', 'root');
+                      return Center(
+                        child: Text(
+                          "Đã thiết lập user"
+                        )
+                      );
+                    }
                   },
                 );
               case 3:

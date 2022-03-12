@@ -1,10 +1,52 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
+
+import 'package:http/http.dart' as http;
 
 import 'package:myapp/sign_up.dart';
 
 class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+
+  TextEditingController _phoneTEC = new TextEditingController();
+  TextEditingController _passwordTEC = new TextEditingController();
+
+  void displayDialog(context, message, [redirect = false]) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) => new CupertinoAlertDialog(
+        title: new Text("Alert"),
+        content: new Text(message),
+      ),
+    );
+  }
+
+  Future<http.Response> login(context, String phoneNumber, String password) async {
+    var response = await http.post(
+      Uri.parse('http://139.180.210.125:8080/login'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+        'Accept': 'application/json'
+      },
+      body: jsonEncode(<String, String>{
+        'phone_number': phoneNumber,
+        'password': password,
+      }),
+    );
+
+
+    if (response.statusCode == 422 || response.statusCode == 401) {
+      displayDialog(context, jsonDecode(response.body)['message']);
+    } else {
+      Navigator.of(context).pushNamed("home");
+      var box = GetStorage();
+      box.write('user', jsonDecode(response.body)['user']);
+      box.write('token', jsonDecode(response.body)['token']);
+    }
+    return response;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +104,14 @@ class Login extends StatelessWidget {
                     children: [
                       CupertinoFormRow(
                         child: CupertinoTextFormFieldRow(
+                          controller: _phoneTEC,
                           placeholder: "Enter phone number",
                         ),
                         prefix: Text("Phone number"),
                       ),
                       CupertinoFormRow(
                         child: CupertinoTextFormFieldRow(
+                          controller: _passwordTEC,
                           placeholder: "Enter password",
                           obscureText: true,
                         ),
@@ -80,7 +124,12 @@ class Login extends StatelessWidget {
                               const SizedBox(height: 30),
                               CupertinoButton.filled(
                                 minSize: 22.0,
-                                onPressed: () {},
+                                onPressed: () {
+                                  var _phone = _phoneTEC.text;
+                                  var _password = _passwordTEC.text;
+
+                                  login(context, _phone, _password);
+                                },
                                 child: const Text('Sign In'),
                               ),
                               Padding(
@@ -96,7 +145,7 @@ class Login extends StatelessWidget {
                               ),
                               const SizedBox(height: 30),
                               CupertinoButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   Navigator.of(context).pushNamed("signup");
                                 },
                                 child: const Text('Sign Up'),
