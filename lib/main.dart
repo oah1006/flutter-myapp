@@ -13,7 +13,6 @@ import 'home_screen.dart';
 import 'package:myapp/login.dart';
 import 'package:myapp/location_service.dart';
 
-import 'network_request.dart';
 void main() async {
   await GetStorage.init();
   runApp(const MyApp());

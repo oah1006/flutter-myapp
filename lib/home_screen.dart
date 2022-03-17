@@ -16,15 +16,15 @@ class HomeScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               )
           ),
-          leading: Icon(
-            CupertinoIcons.list_bullet,
-            color: Colors.blue,
-            size: 36.0,
+          leading: CupertinoButton(
+            child: const Icon(CupertinoIcons.bars),
+            onPressed: () {},
+            padding: EdgeInsets.zero,
           ),
-          trailing: Icon(
-            CupertinoIcons.person_fill,
-            color: Colors.blue,
-            size: 36.0,
+          trailing: CupertinoButton(
+            child: const Icon(CupertinoIcons.person_fill),
+            onPressed: () {},
+            padding: EdgeInsets.zero,
           ),
         ),
         child: MyBottomNavBar()

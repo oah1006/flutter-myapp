@@ -2,8 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/map_screen.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:myapp/promotion_page.dart';
+import 'package:myapp/recruitment_page.dart';
+import 'package:myapp/search_page.dart';
+import 'package:myapp/settings_page.dart';
 
-import 'network_request.dart';
 
 
 class MyBottomNavBar extends StatelessWidget {
@@ -47,43 +50,25 @@ class MyBottomNavBar extends StatelessWidget {
               case 1:
                 return CupertinoTabView(
                   builder: (BuildContext context) {
-                    return DataFromAPI();
+                    return SearchPage();
                   },
                 );
               case 2:
                 return CupertinoTabView(
                   builder: (BuildContext context) {
-                    final box = GetStorage();
-                    if (box.read('user') != null) {
-                      return Center(
-                        child: Text(
-                          box.read('user')
-                        )
-                      );
-                    } else {
-                      box.write('user', 'root');
-                      return Center(
-                        child: Text(
-                          "Đã thiết lập user"
-                        )
-                      );
-                    }
+                    return PromotionPage();
                   },
                 );
               case 3:
                 return CupertinoTabView(
                   builder: (BuildContext context) {
-                    return Center(
-                        child: Text("Tra cứu")
-                    );
+                    return SettingsPage();
                   },
                 );
               case 4:
                 return CupertinoTabView(
                   builder: (BuildContext context) {
-                    return Center(
-                        child: Text("Tra cứu")
-                    );
+                    return RecruitmentPage();
                   },
                 );
               default:
