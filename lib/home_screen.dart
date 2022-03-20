@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:myapp/bottom_nav_bar.dart';
+import 'package:myapp/showPicker.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -23,9 +24,12 @@ class HomeScreen extends StatelessWidget {
           ),
           trailing: CupertinoButton(
             child: const Icon(CupertinoIcons.person_fill),
-            onPressed: () {},
+            onPressed: () {
+              ShowPicker().showActionSheet(context);
+            },
             padding: EdgeInsets.zero,
           ),
+
         ),
         child: MyBottomNavBar()
     );
