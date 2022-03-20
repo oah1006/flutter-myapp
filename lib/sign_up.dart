@@ -146,7 +146,6 @@ class SignUp extends StatelessWidget {
                                     var _phone = _phoneTEC.text;
                                     var _password = _passwordTEC.text;
                                     var _confirmPassword = _confirmPassTEC.text;
-                                    print(_fname);
 
                                     register(context, _fname, _lname, _phone, _password, _confirmPassword);
                                   },

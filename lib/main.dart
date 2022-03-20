@@ -25,8 +25,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var box = GetStorage();
-    // box.remove('user');
-    // box.remove('token');
     var screen = null;
     if (box.read('token') != null) {
       screen = HomeScreen();
