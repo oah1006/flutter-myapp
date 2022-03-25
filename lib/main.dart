@@ -6,6 +6,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 
 import 'package:myapp/map_screen.dart';
+import 'package:myapp/recruitment_page.dart';
+import 'package:myapp/form.dart';
 
 import 'package:myapp/splash_screen.dart';
 import 'package:myapp/sign_up.dart';
@@ -38,6 +40,8 @@ class MyApp extends StatelessWidget {
         "login" : (BuildContext context) => new Login(),
         "signup" : (BuildContext context) => new SignUp(),
         "home" : (BuildContext context) => new HomeScreen(),
+        "form": (BuildContext context) => new FormPage(),
+        "recruitment": (BuildContext context) => new RecruitmentPage(),
       }
     );
   }

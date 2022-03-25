@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'package:myapp/form.dart';
+
 class RecruitmentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context)  {
@@ -59,7 +61,9 @@ class RecruitmentPage extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(220, 20, 0, 0),
                     ),
                     CupertinoButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          Navigator.of(context).pushNamed("form");
+                        },
                         child: const Icon(CupertinoIcons.envelope_fill, size: 80.0, color: Colors.blueAccent)
                     ),
                     Text(
