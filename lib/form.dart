@@ -1,7 +1,10 @@
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/recruitment_page.dart';
 import 'package:cupertino_radio_choice/cupertino_radio_choice.dart';
+import 'package:http/http.dart' as http;
 
 
 class FormPage extends StatelessWidget {
@@ -116,7 +119,7 @@ class FormPage extends StatelessWidget {
                 child: CupertinoButton.filled(
                     child: Text('Mặt trước'),
                     onPressed: () {},
-                    padding: const EdgeInsets.fromLTRB(10, 20, 20, 10),
+                    padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
                 ),
                 flex: 1,
                 fit: FlexFit.tight,
@@ -126,11 +129,12 @@ class FormPage extends StatelessWidget {
               ),
               Flexible(
                 child: CupertinoButton.filled(
-                    child: Text('Mặt trước'),
-                    onPressed: () {}
+                    child: Text('Mặt sau'),
+                    onPressed: () {},
+                    padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
                 ),
                 flex: 1,
-                fit: FlexFit.loose,
+                fit: FlexFit.tight,
               )
             ],
           ),
@@ -149,8 +153,9 @@ class FormPage extends StatelessWidget {
             children: [
               Flexible(
                 child: CupertinoButton.filled(
-                    child: Text('Mặt trước'),
-                    onPressed: () {}
+                  child: Text('Mặt trước'),
+                  onPressed: () {},
+                  padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
                 ),
                 flex: 1,
                 fit: FlexFit.tight,
@@ -160,11 +165,12 @@ class FormPage extends StatelessWidget {
               ),
               Flexible(
                 child: CupertinoButton.filled(
-                    child: Text('Mặt trước'),
-                    onPressed: () {}
+                  child: Text('Mặt sau'),
+                  onPressed: () {},
+                  padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
                 ),
                 flex: 1,
-                fit: FlexFit.loose,
+                fit: FlexFit.tight,
               )
             ],
           ),
