@@ -3,7 +3,29 @@ import 'package:flutter/material.dart';
 
 import 'package:myapp/form.dart';
 
+class MainRecruitment extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "",
+      home: RecruitmentPage(),
+      routes: <String, WidgetBuilder> {
+        "recruitment": (BuildContext context) => new RecruitmentPage(),
+        "form": (BuildContext context) => new FormPage(),
+      },
+    );
+  }
+}
+
 class RecruitmentPage extends StatelessWidget {
+  static Route<dynamic> route() {
+    return CupertinoPageRoute(
+      builder: (BuildContext context) {
+        return RecruitmentPage();
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context)  {
     return CupertinoPageScaffold(
@@ -62,7 +84,7 @@ class RecruitmentPage extends StatelessWidget {
                     ),
                     CupertinoButton(
                         onPressed: () async {
-                          Navigator.of(context).pushNamed("form");
+                          Navigator.of(context).push(FormPage.route());
                         },
                         child: const Icon(CupertinoIcons.envelope_fill, size: 80.0, color: Colors.blueAccent)
                     ),

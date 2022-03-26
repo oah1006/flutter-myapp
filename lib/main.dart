@@ -40,8 +40,6 @@ class MyApp extends StatelessWidget {
         "login" : (BuildContext context) => new Login(),
         "signup" : (BuildContext context) => new SignUp(),
         "home" : (BuildContext context) => new HomeScreen(),
-        "form": (BuildContext context) => new FormPage(),
-        "recruitment": (BuildContext context) => new RecruitmentPage(),
       }
     );
   }
