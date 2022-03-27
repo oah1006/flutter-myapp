@@ -1,16 +1,19 @@
-import 'dart:html';
+
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/recruitment_page.dart';
 import 'package:cupertino_radio_choice/cupertino_radio_choice.dart';
 import 'package:http/http.dart' as http;
+import 'package:myapp/upload_image_button.dart';
 
 
 class FormPage extends StatelessWidget {
   void chosseImage() {
     print(1);
   }
+
+
 
   static Route<dynamic> route() {
     return CupertinoPageRoute(
@@ -116,11 +119,7 @@ class FormPage extends StatelessWidget {
           Row(
             children: [
               Flexible(
-                child: CupertinoButton.filled(
-                    child: Text('Mặt trước'),
-                    onPressed: () {},
-                    padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                ),
+                child: UploadImageButton('Mặt trước'),
                 flex: 1,
                 fit: FlexFit.tight,
               ),
@@ -128,11 +127,7 @@ class FormPage extends StatelessWidget {
                 width: 5,
               ),
               Flexible(
-                child: CupertinoButton.filled(
-                    child: Text('Mặt sau'),
-                    onPressed: () {},
-                    padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                ),
+                child: UploadImageButton('Mặt sau'),
                 flex: 1,
                 fit: FlexFit.tight,
               )
@@ -152,11 +147,7 @@ class FormPage extends StatelessWidget {
           Row(
             children: [
               Flexible(
-                child: CupertinoButton.filled(
-                  child: Text('Mặt trước'),
-                  onPressed: () {},
-                  padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                ),
+                child: UploadImageButton('Mặt trước'),
                 flex: 1,
                 fit: FlexFit.tight,
               ),
@@ -164,11 +155,7 @@ class FormPage extends StatelessWidget {
                 width: 5,
               ),
               Flexible(
-                child: CupertinoButton.filled(
-                  child: Text('Mặt sau'),
-                  onPressed: () {},
-                  padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                ),
+                child: UploadImageButton('Mặt sau'),
                 flex: 1,
                 fit: FlexFit.tight,
               )

@@ -50,5 +50,8 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<key>NSLocationWhenInUseUsageDescription</key>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<key>NSCameraUsageDescription</key>
+	<key>NSMicrophoneUsageDescription</key>
 </dict>
 </plist>
