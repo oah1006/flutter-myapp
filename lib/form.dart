@@ -164,20 +164,32 @@ class FormPage extends StatelessWidget {
           Padding(padding: EdgeInsets.fromLTRB(0, 60, 0, 0)),
           Row(
             children: [
-              CupertinoButton(
+              Flexible(
+                child: CupertinoButton(
+                  padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
                   child: Text(
                       'Tải lại',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                    )
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                      )
                   ),
                   color: CupertinoColors.inactiveGray,
                   onPressed: () {}
+                ),
+                flex: 1,
+                fit: FlexFit.tight,
               ),
-              Spacer(),
-              CupertinoButton.filled(
-                  child: Text('Nộp đơn'),
-                  onPressed: () {}
+              SizedBox(
+                width: 5,
+              ),
+              Flexible(
+                  child: CupertinoButton.filled(
+                    padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                    child: Text('Nộp đơn'),
+                    onPressed: () {}
+                  ),
+                  flex: 1,
+                  fit: FlexFit.tight,
               )
             ],
           ),
