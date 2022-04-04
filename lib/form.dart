@@ -5,16 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:myapp/recruitment_page.dart';
 import 'package:cupertino_radio_choice/cupertino_radio_choice.dart';
 import 'package:http/http.dart' as http;
+import 'package:myapp/upload_file_button.dart';
 import 'package:myapp/upload_image_button.dart';
 
 
 class FormPage extends StatelessWidget {
-  void chosseImage() {
-    print(1);
-  }
-
-
-
   static Route<dynamic> route() {
     return CupertinoPageRoute(
       builder: (BuildContext context) {
@@ -35,20 +30,26 @@ class FormPage extends StatelessWidget {
         children: <Widget>[
           Row(
             children: [
-              Text(
-                'Sơ yếu lý lịch: ',
-                style: TextStyle(
-                  decoration: TextDecoration.none,
-                  fontSize: 18,
-                  color: Colors.black87,
-                  fontWeight: FontWeight.w600,
-                )
+              Flexible(
+                child: Text(
+                    'Sơ yếu lý lịch: ',
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600,
+                    )
+                ),
               ),
-              Spacer(),
-              CupertinoButton.filled(
-                  child: Text('Upload'),
-                  onPressed: () {}
+              SizedBox(
+                width: 5,
+              ),
+              Flexible(
+                  child: FileUpload(),
+                  flex: 1,
+                  fit: FlexFit.tight,
               )
+
             ],
           ),
           Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),

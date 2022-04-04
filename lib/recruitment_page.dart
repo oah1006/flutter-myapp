@@ -33,101 +33,117 @@ class RecruitmentPage extends StatelessWidget {
           children: <Widget> [
             Row(
               children: [
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(220, 100, 0, 0),
-                    ),
-                    CupertinoButton(
-                      onPressed: () {},
-                      child: const Icon(CupertinoIcons.car_detailed, size: 80.0, color: Colors.blueAccent)
-                    ),
-                    Text(
-                        "Giới thiệu",
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
+                Flexible(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(220, 100, 0, 0),
+                      ),
+                      CupertinoButton(
+                          onPressed: () {},
+                          child: const Icon(CupertinoIcons.car_detailed, size: 80.0, color: Colors.blueAccent)
+                      ),
+                      Text(
+                          "Giới thiệu",
+                          style: TextStyle(
+                            decoration: TextDecoration.none,
                             fontSize: 18,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
-                        )
-                    ),
-                  ],
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w600,
+                          )
+                      ),
+                    ],
+                  ),
+                  flex: 1,
+                  fit: FlexFit.tight,
                 ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(180, 100, 0, 0),
-                    ),
-                    CupertinoButton(
-                        onPressed: () {},
-                        child: const Icon(CupertinoIcons.book_solid, size: 80.0, color: Colors.blueAccent)
-                    ),
-                    Text(
-                        "Hướng dẫn",
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontSize: 18,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
-                        )
-                    ),
-                  ],
-                ),
+                Flexible(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(180, 100, 0, 0),
+                      ),
+                      CupertinoButton(
+                          onPressed: () {},
+                          child: const Icon(CupertinoIcons.book_solid, size: 80.0, color: Colors.blueAccent)
+                      ),
+                      Text(
+                          "Hướng dẫn",
+                          style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontSize: 18,
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w600,
+                          )
+                      ),
+                    ],
+                  ),
+                  flex: 1,
+                  fit: FlexFit.tight,
+                )
               ],
             ),
             Row(
               children: [
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(220, 20, 0, 0),
-                    ),
-                    CupertinoButton(
-                        onPressed: () async {
-                          Navigator.of(context).push(FormPage.route());
-                        },
-                        child: const Icon(CupertinoIcons.envelope_fill, size: 80.0, color: Colors.blueAccent)
-                    ),
-                    Text(
-                        "Mẫu đơn",
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontSize: 18,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
-                        )
-                    ),
-                  ],
+                Flexible(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(220, 20, 0, 0),
+                      ),
+                      CupertinoButton(
+                          onPressed: () async {
+                            Navigator.of(context).push(FormPage.route());
+                          },
+                          child: const Icon(CupertinoIcons.envelope_fill, size: 80.0, color: Colors.blueAccent)
+                      ),
+                      Text(
+                          "Mẫu đơn",
+                          style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontSize: 18,
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w600,
+                          )
+                      ),
+                    ],
+                  ),
+                  flex: 1,
+                  fit: FlexFit.tight,
                 ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(180, 20, 0, 0),
-                    ),
-                    CupertinoButton(
-                        onPressed: () {},
-                        child: const Icon(CupertinoIcons.person_alt_circle_fill, size: 80.0, color: Colors.blueAccent)
-                    ),
-                    Text(
-                        "Kiểm tra",
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontSize: 18,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
-                        )
-                    ),
-                    Text(
-                        "Thông tin",
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontSize: 18,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
-                        )
-                    ),
-                  ],
-                ),
+                Flexible(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                      ),
+                      CupertinoButton(
+                          onPressed: () {},
+                          child: const Icon(CupertinoIcons.person_alt_circle_fill, size: 80.0, color: Colors.blueAccent)
+                      ),
+                      Text(
+                          "Kiểm tra",
+                          style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontSize: 18,
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w600,
+                          )
+                      ),
+                      Text(
+                          "Thông tin",
+                          style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontSize: 18,
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w600,
+                          )
+                      ),
+                    ],
+                  ),
+                  flex: 1,
+                  fit: FlexFit.tight,
+                )
               ],
             ),
             Row(
