@@ -13,20 +13,16 @@ class FileUpload extends MyStatefulWidget {
 }
 
 class _FileUpload extends State<FileUpload> {
-    FilePickerResult? result;
-    PlatformFile? file;
+    PlatformFile? pickedFile;
+    bool _isPreview = false;
 
-    void pickerFile() async {
-      FilePickerResult? result = await FilePicker.platform.pickFiles();
+    Future selectFile() async {
+      final result = await FilePicker.platform.pickFiles();
+      if (result == null) return;
 
-      if(result == null) return;
-      PlatformFile? file = result.files.first;
-
-      viewFile(file);
-    }
-
-    void viewFile(PlatformFile file) {
-
+      setState(() {
+        pickedFile = result.files.first;
+      });
     }
 
     @override
@@ -34,7 +30,8 @@ class _FileUpload extends State<FileUpload> {
       return CupertinoButton.filled(
         padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
         onPressed: () {
-          pickerFile();
+          selectFile();
+
         },
         child: Text('Upload'),
 
