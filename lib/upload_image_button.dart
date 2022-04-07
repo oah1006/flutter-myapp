@@ -7,8 +7,11 @@ import 'package:image_picker/image_picker.dart';
 
 class UploadImageButton extends StatefulWidget {
   String label = '';
+  String? name;
+  final void callback;
 
-  UploadImageButton(this.label);
+  UploadImageButton({Key? key,required this.label, this.name, this.callback}) : super(key: key);
+
 
   @override
   _UploadImageButton createState() => _UploadImageButton();
@@ -18,6 +21,31 @@ class _UploadImageButton extends State<UploadImageButton> {
   File? image;
   bool _isPreview = false;
   final ImagePicker _picker = ImagePicker();
+
+  Future takePhoto(widget, context) async {
+    final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
+    if (photo == null) return;
+    setState(() {
+      _isPreview = true;
+      image = File(photo.path);
+    });
+    widget.callback(widget.name, image?.path);
+    Navigator.pop(context);
+  }
+
+  Future takeLibrary(widget, context) async {
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    if (image == null) return;
+    setState(() {
+      _isPreview = true;
+      this.image = File(image.path);
+    });
+
+    widget.callback(widget.name, image.path);
+    Navigator.pop(context);
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,25 +63,13 @@ class _UploadImageButton extends State<UploadImageButton> {
                       CupertinoActionSheetAction(
                           child: const Text('Take to photo'),
                           onPressed: () async {
-                            final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
-                            if (photo == null) return;
-                            setState(() {
-                              _isPreview = true;
-                              image = File(photo.path);
-                            });
-                            Navigator.pop(context);
+                            takePhoto(widget, context);
                           }
                       ),
                       CupertinoActionSheetAction(
                           child: const Text('Upload the library'),
                           onPressed: () async {
-                            final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-                            if (image == null) return;
-                            setState(() {
-                              _isPreview = true;
-                              this.image = File(image.path);
-                            });
-                            Navigator.pop(context);
+                            takeLibrary(widget, context);
                           }
                       ),
                     ],
