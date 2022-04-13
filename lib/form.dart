@@ -263,24 +263,6 @@ class FormPageState extends State<FormPage> {
           Row(
             children: [
               Flexible(
-                child: CupertinoButton(
-                  padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                  child: Text(
-                      'Tải lại',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                      )
-                  ),
-                  color: CupertinoColors.inactiveGray,
-                  onPressed: () {}
-                ),
-                flex: 1,
-                fit: FlexFit.tight,
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              Flexible(
                   child: CupertinoButton.filled(
                     padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
                     child: Text('Nộp đơn'),

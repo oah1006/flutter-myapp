@@ -148,26 +148,27 @@ class RecruitmentPage extends StatelessWidget {
             ),
             Row(
               children: [
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(410, 20, 0, 0),
-                    ),
-                    CupertinoButton(
-                        onPressed: () {},
-                        child: const Icon(CupertinoIcons.headphones, size: 80.0, color: Colors.blueAccent)
-                    ),
-                    Text(
-                        "Tư vấn",
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontSize: 18,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
-                        )
-                    ),
-                  ],
-                ),
+                Flexible(
+                  child: Column(
+                    children: [
+                      CupertinoButton(
+                          onPressed: () {},
+                          child: const Icon(CupertinoIcons.headphones, size: 80.0, color: Colors.blueAccent)
+                      ),
+                      Text(
+                          "Tư vấn",
+                          style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontSize: 18,
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w600,
+                          )
+                      ),
+                    ],
+                  ),
+                  flex: 1,
+                  fit: FlexFit.tight,
+                )
               ],
             ),
 
