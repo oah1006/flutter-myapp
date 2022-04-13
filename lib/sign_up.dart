@@ -101,7 +101,7 @@ class SignUp extends StatelessWidget {
                               controller: _fNameTEC,
                               placeholder: "Enter first name",
                             ),
-                            prefix: Text("Frist Name"),
+                            prefix: Text("First Name"),
                           ),
                           CupertinoFormRow(
                             child: CupertinoTextFormFieldRow(
