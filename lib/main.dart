@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
     if (box.read('token') != null) {
       screen = HomeScreen();
     } else {
-      screen = Login();
+      screen = SplashScreen();
     }
     return MaterialApp(
       title: "Flutter demo",

@@ -34,7 +34,7 @@ class SignUp extends StatelessWidget {
       String phoneNumber, String password, String confirmPassword) async {
 
     var response = await http.post(
-      Uri.parse('http://139.180.210.125:8080/users/register'),
+      Uri.parse('http://45.76.156.50/users/register'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'Accept': 'application/json'

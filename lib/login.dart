@@ -25,7 +25,7 @@ class Login extends StatelessWidget {
 
   Future<http.Response> login(context, String phoneNumber, String password) async {
     var response = await http.post(
-      Uri.parse('http://139.180.210.125:8080/login'),
+      Uri.parse('http://45.76.156.50/login'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'Accept': 'application/json'

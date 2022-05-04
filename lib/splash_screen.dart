@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:myapp/home_screen.dart';
+import 'package:myapp/login.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context) => HomeScreen()));
+      Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context) => Login()));
     });
   }
   @override

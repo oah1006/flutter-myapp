@@ -55,7 +55,7 @@ class FormPageState extends State<FormPage> {
     print(form);
     var request = http.MultipartRequest(
       'POST',
-      Uri.parse('http://139.180.210.125:8080/recruitments/apply'),
+      Uri.parse('http://45.76.156.50/recruitments/apply'),
       // body: jsonEncode(<String, String>{
       //   'cv': null,
       //   'job_application': null,
